@@ -11,14 +11,13 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #6B8E23, #A2C635); /* Background Gradient */
-            color: #333;
+            background: #F4F4F4; /* Light Gray Background */
+            color: #333; /* Dark Gray Text */
         }
 
         /* Header Styles */
         header {
-            background: url('header-image.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background: #003366; /* Dark Blue */
             color: white;
             text-align: center;
             padding: 100px 0;
@@ -28,7 +27,7 @@
         /* Navigation Bar */
         nav {
             text-align: center;
-            background-color: #333;
+            background-color: #003366; /* Dark Blue */
             padding: 10px;
             position: sticky;
             top: 0;
@@ -45,7 +44,7 @@
         }
 
         nav a:hover {
-            background-color: #4CAF50;
+            background-color: #66CCFF; /* Light Blue */
             border-radius: 5px;
         }
 
@@ -60,18 +59,114 @@
         }
 
         h2 {
-            color: #4CAF50;
+            color: #003366; /* Dark Blue */
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 15px;
-            background-color: #333;
+            background-color: #003366; /* Dark Blue */
             color: white;
             position: fixed;
             width: 100%;
             bottom: 0;
         }
 
-       
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            main {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+
+        /* Back to Top Button */
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #66CCFF; /* Light Blue */
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #003366; /* Dark Blue */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Introduction to Computers</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="advantages.html">Advantages</a>
+    <a href="disadvantages.html">Disadvantages</a>
+</nav>
+
+<main>
+    <h2 class="fade-in">What is a Computer?</h2>
+    <p class="fade-in">A <strong>computer</strong> is an electronic device that processes data and performs tasks according to a set of instructions, called programs. It is capable of performing a wide range of tasks, such as calculations, data processing, communication, entertainment, and more. Computers can be found in various forms, such as desktops, laptops, tablets, and smartphones. They have revolutionized nearly every aspect of modern life, from business and education to healthcare and entertainment.</p>
+</main>
+
+<!-- Back to Top Button -->
+<button onclick="topFunction()" id="backToTopBtn" title="Go to top">↑</button>
+
+<footer>
+    <p>&copy; 2025 Computer Basics. All rights reserved.</p>
+</footer>
+
+<script>
+    // Get the button
+    var mybutton = document.getElementById("backToTopBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</body>
+</html>
